@@ -4,26 +4,106 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <!-- Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    
+     <!-- Nav CSS -->
+     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
+     <!-- NEW-TWEET CSS-->
+     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+     
+
+     <!-- HEADER CSS -->
+     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+     <!-- NEW TWEET ARTICLE-->
+     <link rel="stylesheet" href="/styles/new-tweet-article.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
 
+    <script src="/scripts/composer-char-counter.js"></script>
+
+  </head>
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
+      <span class="nav-write-tweet">
+        Write a new tweet
+        <i class="icon fas fa-angle-double-down"></i>
+      </span>
     </nav>
-
+    <header id="main-header">
+      <div>
+          <img src="/images/profile-hex.png"/>
+      </div>
+      <br></br>
+      <div>
+          <h2>Hossein</h2>
+      </div>
+    </header>
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+    <main class="container">
+      <section class="new-tweet">
+        <form action="/tweets/" method="POST">
+          <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <article class="tweet">
+        <header>
+          <div>
+            <i class="fa-sharp fa-solid fa-user-ninja"></i>
+            <span>Max Payne</span>
+          </div>
+          <p class="username">@mAxpAyne2001</p>
+        </header>
+        <p class="underline-text">
+          They were all dead. The final gunshot was an exclamation mark to everything that had led to this point. I released my finger from the trigger. And then it was all over.
+        </p>
+        <footer>
+          <p>21 years ago</p>
+          <div>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
+    </main>
+</body>
 </html>
