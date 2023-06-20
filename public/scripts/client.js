@@ -52,7 +52,7 @@ $('form').submit(function(event) {
     url: 'http://localhost:8080/tweets', 
     data: formData
   })
-  .(function(response) {
+  .then(function(response) {
     // Handle the response from the server if needed
     console.log('Tweet submitted successfully:', response);
   })
