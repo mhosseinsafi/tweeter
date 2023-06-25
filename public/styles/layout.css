@@ -19,6 +19,7 @@ body {
   background-color: lightgray;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  position: fixed;
 }
 
 /*
@@ -30,3 +31,18 @@ body {
   margin: 0;
   background-color: lightgrey;
  }
+
+ /* tablet */
+ @media only screen and (min-width: 768px) and (max-width: 1024px) { 
+   
+  body {
+    display: flex;
+  }
+}
+
+/* desktop */
+@media only screen and (min-width: 1024px) {                    
+  body {
+    display: flex;
+  }
+}

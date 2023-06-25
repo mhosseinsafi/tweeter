@@ -6,39 +6,10 @@
 
 // Fake data taken from initial-tweets.json
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1544666010224
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense, donc je suis"
-    },
-    "created_at": 1544666010225
-  }
-];
-
 
 $(document).ready(function() {
 
-  // const renderTweets = function(tweets) {
-  //   const $tweet = createTweetElement(tweets[0]);
-  //   $('#tweets-container').prepend($tweet);
-  //   console.log($tweet);
-  // };
+  const $errorMessages = $('#error-messages'); // Store error element in a variable
   
   const renderTweets = function(tweets) {
     $('#tweets-container').empty();
@@ -52,19 +23,27 @@ $(document).ready(function() {
   $('form').on('submit', function(event) {
     event.preventDefault(); // Prevent refresh behavior
 
+    // Slide up the error element before validation
+    $errorMessages.slideUp();
+
     // Serialize the form data
     const formData = $(this).serialize();
     const tweetContent = $(this).find('textarea[name="text"]').val();
 
     // Data validation
     if (!tweetContent) {
-      alert('Tweet content cannot be empty');
+      showError('OoooooPPPss !! Tweet content cannot be empty');
       return;
     }
 
     if (tweetContent.length > 140) {
-      alert('Tweet content exceeds the maximum limit of 140 characters');
+      showError('OoooooPPPss !! You have gone over 140 characters');
       return;
+    }
+
+    function showError(errorMessage) {
+      $errorMessages.text(errorMessage); // Insert error message into the error element
+      $errorMessages.slideDown(); // Slide down the error element with animation
     }
 
     // Send an AJAX POST request to the server
@@ -79,18 +58,6 @@ $(document).ready(function() {
 
     });
   });
-
-  // const loadTweets = function() {
-  //   $.ajax({
-  //     method: 'GET',
-  //     url: 'http://localhost:8080/tweets',
-  //     dataType: 'json'
-  //   })
-  //   .then(function(response) {
-  //     console.log('Tweets loaded successfully:', response);
-  //     renderTweets(response.sort((a, b) => b.created_at - a.created_at).slice(0, 1));
-  //   });
-  // };
 
   const loadTweets = function () {
     $.ajax({
@@ -119,12 +86,14 @@ $(document).ready(function() {
     const $tweet = $(`
       <article class="tweet">
         <header>
+        <div class="avaname">
           <img src="${tweet.user.avatars}">
-          <h2>${tweet.user.name}</h2>
+          <h2 class="name">${tweet.user.name}</h2>
+          </div>
           <span class="handle">${tweet.user.handle}</span>
         </header>
         <div class="content">
-          <p>${escape(tweet.content.text)}</p>
+          <p class=underline-text>${escape(tweet.content.text)}</p>
         </div>
         <footer>
           <p>${timePassed}</p>

@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <title>Tweeter - Home Page</title>
 
     <!-- Font-->
@@ -81,6 +83,7 @@
       <section class="new-tweet">
         <form action="/tweets/" method="POST">
           <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
+          <div id="error-messages" style="display: none;"></div>
           <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -88,27 +91,6 @@
         </form>
       </section>
       <section id="tweets-container">
-      <article class="tweet">
-        <header>
-          <div>
-            <i class="fa-sharp fa-solid fa-user-ninja"></i>
-            <span>Max</span>
-          </div>
-          <p class="username">@mAx2001</p>
-        </header>
-        <p class="underline-text">
-          They were all dead. The final gunshot was an exclamation mark to everything that had led to this point. I released my finger from the trigger. And then it was all over.
-        </p>
-        <footer>
-          <p>21 years ago</p>
-          <div>
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </footer>
-      </section>
-      </article>
     </main>
 </body>
 </html>

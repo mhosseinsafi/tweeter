@@ -5,6 +5,7 @@
   margin-left: 20px;
   padding-left: 20px;
   padding-right: 20px;
+  margin-bottom: 15px;
 }
 
 .tweet:hover {
@@ -15,6 +16,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.name {
+  padding-left: 80px;
 }
 
 .tweet header p {
@@ -50,3 +55,19 @@ p.underline-text {
 p.username {
   color: gray;
 }
+
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 1024px) { 
+  .tweet {
+    margin-bottom: 15px;
+   }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {  
+ .tweet {
+  margin-bottom: 15px;
+ }
+}
+
+
