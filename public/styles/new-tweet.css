@@ -1,11 +1,9 @@
-
 .new-tweet {
   background-color: lightgray;
   width: 100%;
   display: flex;
   flex-direction: column;
   padding: 1em;
-
 }
 
 #tweet-text {
@@ -43,29 +41,3 @@
   border: 1px solid #c70000;
   margin: 10px;
 }
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-#tweets-container {
-  margin-top: 50px;
-  
- }
- .new-tweet {
-   padding: 0.5em;
-   margin-top: 230px;
- }
-}
-
-/* Desktop */
-@media only screen and (min-width: 1024px) {  
-  #tweets-container {
-    width: 985px;
-    margin-left: 200px;
-  }   
-  .new-tweet {
-    padding: 0.5em;
-    margin-top: 226px;
-    padding-left: 220px;
-    padding-right: 74px;
-  }
-}
-

@@ -1,4 +1,4 @@
-/*
+/* /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
@@ -14,35 +14,34 @@ html {
  * Global layout stuff
  */
 
-body {
+ .container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 220px;
+  width: 100%;
+ }
+
+ .wrapper {
+  display: flex;
+  width: 100%;
+ }
+
+ body {
   color: #545149;
   background-color: lightgray;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-  position: fixed;
+  /* position: fixed; */
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
- main {
-  width: 90%;
-  margin: 0;
-  background-color: lightgrey;
- }
-
- /* tablet */
- @media only screen and (min-width: 768px) and (max-width: 1024px) { 
-   
-  body {
+@media only screen and (max-width: 768px) { 
+  .wrapper {
     display: flex;
+    flex-direction: column;
+  }
+
+  .container{
+    margin-top: 20px;
   }
 }
 
-/* desktop */
-@media only screen and (min-width: 1024px) {                    
-  body {
-    display: flex;
-  }
-}
