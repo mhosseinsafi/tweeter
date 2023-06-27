@@ -20,6 +20,11 @@ A simple single-page AJAX-based Twitter clone that uses jQuery, HTML5 and plain 
 
 - Timeago Functionality: The application uses the timeago.js library to display relative timestamps for the tweets, making it easier to understand when a tweet was posted (e.g., "2 minutes ago," "1 day ago").
 
+## Screenshots
+
+!["Desktop View"](https://github.com/mhosseinsafi/tweeter/blob/master/docs/tweeter-Desktop.png?raw=true)
+!["Mobile View"](https://github.com/mhosseinsafi/tweeter/blob/master/docs/tweeter-mobile.png?raw=true)
+
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
