@@ -8,20 +8,20 @@
 
 
 $(document).ready(function() {
-
-  const $errorMessages = $('#error-messages'); // Store error element in a variable
+// Store error element in a variable
+  const $errorMessages = $('#error-messages'); 
   
   const renderTweets = function(tweets) {
     $('#tweets-container').empty();
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $('#tweets-container').prepend($tweet);
-      console.log($tweet);
     }
   };
 
   $('form').on('submit', function(event) {
-    event.preventDefault(); // Prevent refresh behavior
+    // Prevent refresh behavior
+    event.preventDefault(); 
 
     // Slide up the error element before validation
     $errorMessages.slideUp();
@@ -42,20 +42,24 @@ $(document).ready(function() {
     }
 
     function showError(errorMessage) {
-      $errorMessages.text(errorMessage); // Insert error message into the error element
-      $errorMessages.slideDown(); // Slide down the error element with animation
+      // Insert error message into the error element
+      $errorMessages.text(errorMessage); 
+      // Slide down the error element with animation
+      $errorMessages.slideDown(); 
     }
 
     // Send an AJAX POST request to the server
     $.ajax({
       method: 'POST',
       url: 'http://localhost:8080/tweets',
-      data: formData           //Use the jQuery library to submit a POST request that sends the serialized data to the server
+      //Use the jQuery library to submit a POST request that sends the serialized data to the server
+      data: formData           
     })
-    .then(function(response) {            // Handle the response from the server if needed
-      console.log('Tweet submitted successfully:', response);
+     // Handle the response from the server if needed
+    .then(function(response) {           
       loadTweets();
-
+      $("#tweet-text").val("");
+      $(".counter").text(140);
     });
   });
 
@@ -72,8 +76,8 @@ $(document).ready(function() {
       },
     });
   };
-
-  loadTweets();          // Call the loadTweets function to load tweets on page load
+// Call the loadTweets function to load tweets on page load
+  loadTweets();          
 
   const escape = function (str) {
     let div = document.createElement("div");
@@ -97,6 +101,11 @@ $(document).ready(function() {
         </div>
         <footer>
           <p>${timePassed}</p>
+          <div>
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-heart"></i>
+        </div>
         </footer>
       </article>
     `);

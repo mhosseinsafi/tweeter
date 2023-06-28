@@ -40,9 +40,8 @@
   color: darkred;
 }
 
-.tweet footer div {
-  display: flex;
-  justify-content: flex-end;
+.tweet footer div i {
+  padding-left: 10px;
 }
 
 p.underline-text {
